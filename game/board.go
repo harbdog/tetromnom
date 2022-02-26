@@ -112,8 +112,7 @@ func (b *Board) checkValidMove(t *Tetromino, xOffset, yOffset int) bool {
 		yCheck := y + yOffset
 		if yCheck >= len(bMap) && xCheck >= 0 && xCheck < len(bMap[0]) {
 			// since piece starts from above the top it can be valid when above the board
-			valid = true
-			break
+			continue
 		}
 		if xCheck < 0 || yCheck < 0 || xCheck >= len(bMap[yCheck]) || bMap[yCheck][xCheck] != 0 {
 			valid = false
